@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu Recyclo</title>
+  <link rel="stylesheet" href="stylejeu.css">
+</head>
+<body>
+
+<div id="starsBar">⭐ 0</div>
+
+<div id="popupWin" class="popup">
+  🎉 Félicitations 🎉
+  <p>Tous les déchets sont triés</p>
+</div>
+
+<div class="game-wrapper">
+  
+  <div class="left-panel">
+    <img src="images/image1.png" alt="Recyclo" id="recyclo">
+    <div id="recycloMessage">
+      Aide-moi à trier les déchets 🚮
+    </div>
+  </div>
+
+  <div class="game-area">
+    <div class="dechets" id="dechetsContainer"></div>
+
+    <div class="poubelles">
+      <div class="bin" data-type="paper">
+        <img src="poubelles/bleu.png"><div>Papier</div>
+      </div>
+      <div class="bin" data-type="plastic">
+        <img src="poubelles/jaune.png"><div>Plastique</div>
+      </div>
+      <div class="bin" data-type="glass">
+        <img src="poubelles/verte.png"><div>Verre</div>
+      </div>
+      <div class="bin" data-type="compost">
+        <img src="poubelles/maron.png"><div>Compost</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="middle-buttons" id="middleButtons" style="display:none;">
+    <button class="btn btn-primary" id="newGameBtn">Nouvelle partie 🔄</button>
+    <button class="btn btn-danger" id="quitBtn">Quitter ❌</button>
+  </div>
+
+</div>
+<!-- Bouton retour vers la page d'accueil -->
+<button class="back-game" onclick="window.location.href='index.html'">⬅ Retour</button>
+
+<script src="scriptjeu.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+ 

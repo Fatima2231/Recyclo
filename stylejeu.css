@@ -1,0 +1,205 @@
+body { 
+  margin: 0;
+  font-family: "Comic Sans MS", sans-serif;
+  background: linear-gradient(135deg, #e0f7e0, #a8e6a8);
+}
+
+.game-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+#starsBar {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 30px;
+  background: rgb(210, 235, 233);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgb(63, 69, 69);
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(229, 236, 183);
+  color: rgb(14, 13, 13);
+  padding: 30px 20px;
+  font-size: 22px;
+  border-radius: 15px;
+  display: none;
+  text-align: center;
+  z-index: 100;
+  border: 3px solid #ffd54f
+}
+
+/* ----------------------------- */
+/*   COLONNE GAUCHE MODIFIÉE     */
+/* ----------------------------- */
+
+.left-panel {
+  width: 250px;
+  background: #4db6ac;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  border-radius: 40px;
+  border: 4px solid #00796b;
+  gap: 20px; /* Ajoute espace vertical */
+}
+
+/* MESSAGE EN HAUT */
+#recycloMessage {
+  width: 230px;
+  text-align: center;
+  background: #fff9c4eb;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid #ffd54f;
+  order: 1; /* Message en premier */
+}
+
+/* IMAGE EN DESSOUS */
+#recyclo {
+  width: 450px;
+  animation: bounce 2s infinite;
+  order: 2; /* Image en deuxième */
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ----------------------------- */
+/*         ZONE DE JEU           */
+/* ----------------------------- */
+
+.game-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dechets {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dechet {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #a2d8d300;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  cursor: grab;
+  background: rgba(255, 255, 255, 0);
+  transition: all 0.3s;
+}
+
+.dechet:hover { transform: scale(1.1); }
+
+.dechet.hide { opacity: 0.2; }
+
+@keyframes correctDrop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+.dechet.correct { animation: correctDrop 0.6s forwards; }
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.dechet.wrong { animation: wrongShake 0.4s; }
+
+.poubelles {
+  display: flex;
+  gap: 30px;
+}
+
+.bin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.bin:hover { transform: scale(1.1); }
+
+.bin img {
+  width: 80px;
+  margin-bottom: 5px;
+}
+
+.bin[data-type="paper"] { border: 3px solid #2196f3; background: #dee9f4; }
+.bin[data-type="plastic"] { border: 3px solid #FFEB3B; background: #fffde7; }
+.bin[data-type="glass"] { border: 3px solid #4CAF50; background: #d8eedf; }
+.bin[data-type="compost"] { border: 3px solid #795548; background: #efebe9; }
+
+.middle-buttons {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.3s;
+  border: 3px solid #f7d76d9a;
+}
+
+.btn-primary { background: #42b9a6e7; color: white; }
+.btn-danger { background:#42b9a6e7; color: white; }
+
+.btn:hover { transform: translateY(-3px); }
+
+.back-game {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #27897d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+  z-index: 50;
+}
+
+.back-game:hover {
+  background-color: #004d40;
+}
+
+

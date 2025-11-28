@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil - Recyclo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="images/image1.png" alt="Recyclo le guide" class="recyclo" />
+    </div>
+
+    <div class="right">
+      <h1>👋Coucou les enfants</h1>
+      <p>
+        Je suis <strong>Recyclo</strong>, ton ami du tri.<br>
+        je vais t’aider à sauver notre planète 🌍
+      </p>
+
+      <div class="buttons">
+        <button id="btn-jouer">🎮 Jouer</button>
+        <button id="btn-apprendre">📘 Apprendre</button>
+        <button id="btn-quitter">❌ Quitter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up Quitter -->
+<div id="quitModal" class="modal">
+  <div class="modal-content">
+
+    <!-- ÉTAPE 1 : Confirmation -->
+    <div id="confirmBox">
+      <h2>Voulez-vous vraiment quitter ? </h2>
+      <button id="btn-oui" class="verb">Quitter</button>
+      <button id="btn-non" class="verb cancel">Annuler</button>
+    </div>
+
+    <!-- ÉTAPE 2 : Message de Recyclo -->
+    <div id="goodbyeBox" style="display:none;">
+      <img src="images/image4.png" class="modal-img" alt="Recyclo">
+      <h2>À bientôt les amis 👋 </h2>
+      <button id="btn-retour" class="verb">À bientôt</button>
+    </div>
+
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
